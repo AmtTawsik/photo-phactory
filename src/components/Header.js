@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../App.css";
 import { Link, NavLink } from "react-router-dom";
 import logo from '../assects/logo.png'
+import { FaSignOutAlt } from "react-icons/fa";
+import { AuthContext } from "../Contexts/AuthContext";
 
 const Header = () => {
   const [state, setState] = useState(false);
-  const user =2;
 
   // Replace javascript:void(0) path with your path
   const navigation = [
@@ -14,6 +15,15 @@ const Header = () => {
     { title: "Add service", path: "/addservice" },
     { title: "Blog", path: "/blog" },
   ];
+
+  // use of useContext
+  const { user, logOut } = useContext(AuthContext);
+    // LogOut function
+    const handleLogout = () => {
+        logOut()
+          .then(() => {})
+          .catch((error) => console.log(error));
+      };
   return (
     <nav className="bg-fuchsia-200 w-full border-b md:border-0 md:static">
       <div className="items-center px-4  mx-auto md:flex md:px-8">
@@ -96,7 +106,7 @@ const Header = () => {
             </li>
 
             <li>
-                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">Logout</button>
+                <button onClick={handleLogout} className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500"><FaSignOutAlt></FaSignOutAlt></button>
             </li>
           </ul>
         </div>

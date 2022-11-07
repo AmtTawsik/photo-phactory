@@ -59,10 +59,10 @@ const Login = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center">
           <h1 className="text-5xl font-bold text-white">Login now!</h1>
-          <p className="py-6 text-orange-500 text-lg">
-            Skill online is one of the most populer website for learn online.
-            You can easyly purches Any kind of skill courses from our website.
-            just click the button and start a new jaurny of learning with us.
+          <p className="py-6 text-orange-200 text-lg">
+            PHOTO-PHACTORY is one of the most populer website for Photography services.
+            You can easyly get Any kind of services from our website.
+            just login and start a new jaurny of enjoy your Life with us.
           </p>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

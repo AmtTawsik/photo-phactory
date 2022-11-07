@@ -10,9 +10,9 @@ const Header = () => {
   // Replace javascript:void(0) path with your path
   const navigation = [
     { title: "Home", path: "/home" },
-    { title: "Courses", path: "/courses" },
+    { title: "Services", path: "/services" },
+    { title: "Add service", path: "/addservice" },
     { title: "Blog", path: "/blog" },
-    { title: "FAQ", path: "/faq" },
   ];
   return (
     <nav className="bg-fuchsia-200 w-full border-b md:border-0 md:static">

@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthContext";
 import Review from "./Review";
 
@@ -52,13 +53,18 @@ const Reviews = ({ serviceDetails }) => {
   return (
     <div className="grid md:grid-cols-2">
 
-      <div>
+      <div className="my-10">
         {
+            reViews.length ? 
             reViews.map(reView => <Review key={reView._id} reView={reView}></Review>)
+            :
+            <p className="text-4xl font-bold text-amber-400">No Review Found!</p>
         }
       </div>
 
-      <form onSubmit={handleReviewSubmit} className="card-body">
+      {
+        user?.uid?
+        <form onSubmit={handleReviewSubmit} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Your Name</span>
@@ -141,6 +147,11 @@ const Reviews = ({ serviceDetails }) => {
           <button type="submit" className="btn btn-primary">Add Review</button>
         </div>
       </form>
+      :
+      <div className="flex justify-end text-4xl p-0 m-0">
+        <Link to='/login' className="link link-success">Please login to add a review</Link>
+      </div>
+      }
     </div>
   );
 };

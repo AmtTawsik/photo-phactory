@@ -1,12 +1,13 @@
 import React from "react";
+import '../App.css'
 import { FaEdit, FaStar, FaTrashAlt } from "react-icons/fa";
 
 const MyReview = ({ myReview }) => {
   return (
     <div className=" bg-base-200 py-0 my-5 w-10/12 md:w-5/12 mx-auto rounded-xl">
       <div className="hero-content flex-col lg:flex-row pl-0 py-0">
-        <div className="w-24 mask mask-squircle">
-          <img  alt="" src={myReview.userimage} />
+        <div className="w-48 mask mask-squircle">
+          <img alt="" className="r-image" src={myReview.userimage} />
         </div>
         <div className="mx-5">
           <h1 className="text-xl font-bold p-0">{myReview.userName}</h1>
@@ -14,6 +15,7 @@ const MyReview = ({ myReview }) => {
             <span className="font-extrabold">Rating:</span> 4.8{" "}
             <FaStar></FaStar>
           </p>
+          <p>Service Name:{myReview.serviceName}</p>
           <p className="">
             <span className="font-extrabold text-orange-700">Review:</span>{" "}
             {myReview.userReview}

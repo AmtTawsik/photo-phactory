@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 import bg from "../assects/bg-home.jpg";
 import right from "../assects/right.jpg";
 import FaQ from "./FaQ";
+import Service from "./Service";
 
 const Home = () => {
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5000/homeServices")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
+  console.log(services);
   return (
     <>
       <section>
@@ -31,7 +40,14 @@ const Home = () => {
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <div className="grid md:grid-cols-3 gap-6 my-7 w-11/12 mx-auto">
+          {services.map((service) => (
+            <Service key={service._id} service={service}></Service>
+          ))}
+        </div>
+        <Link to='/services' className="flex justify-center mb-5"><button className="btn btn-active btn-accent">See All</button></Link>
+      </section>
 
       <section>
         <div className="hero bg-base-200">

@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 
 const handleAddServic = event =>{
     event.preventDefault();
@@ -14,7 +15,19 @@ const handleAddServic = event =>{
         price,
         description,
     }
-    console.log(service)
+    // console.log(service)
+    fetch('http://localhost:5000/services', {
+        method:'POST',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(service)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+    .catch(err => console.error(err))
+    toast.success('Product Added Successfully')
+    form.reset();
 }
 
 const AddService = () => {
@@ -36,6 +49,7 @@ const AddService = () => {
               name="name"
               type="text"
               className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             />
           </div>
 
@@ -49,6 +63,7 @@ const AddService = () => {
               name="image"
               type="text"
               className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             />
           </div>
 
@@ -62,6 +77,7 @@ const AddService = () => {
                 name="price"
               type="text"
               className="block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             />
           </div>
 
@@ -74,6 +90,7 @@ const AddService = () => {
                 block w-full px-4 py-2 mt-2 text-indigo-700 bg-white border rounded-md focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40
           "
                 rows="5"
+                required
               ></textarea>
             </label>
           </div>

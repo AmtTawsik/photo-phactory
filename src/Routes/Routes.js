@@ -5,6 +5,7 @@ import Home from "../components/Home";
 import Login from "../components/Login";
 import MyReviews from "../components/MyReviews";
 import Register from "../components/Register";
+import ServiceDetails from "../components/ServiceDetails";
 import Services from "../components/Services";
 import Main from "../layout/Main";
 
@@ -40,6 +41,12 @@ export const routes = createBrowserRouter([
             {
                 path:'/services',
                 element:<Services></Services>,
+                loader:()=>fetch('http://localhost:5000/services'),
+            },
+            {
+                path:'/services/:id',
+                element:<ServiceDetails></ServiceDetails>,
+                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path:'/blog',

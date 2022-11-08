@@ -3,7 +3,7 @@ import '../App.css'
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthContext";
-import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -13,7 +13,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const googleProvider = new GoogleAuthProvider();
-  const githubProvider = new GithubAuthProvider();
   const [error, setError] = useState(' ');
 
   const from = location.state?.from?.pathname || "/";
@@ -38,15 +37,6 @@ const Login = () => {
 
   const handleGoogleSignIn = () => {
     ProviderLogin(googleProvider)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => console.log(error));
-  };
-  const handleGithubSignIn = () => {
-    ProviderLogin(githubProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);

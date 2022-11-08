@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "../App.css";
 import { Link, NavLink } from "react-router-dom";
-import logo from '../assects/logo.png'
+import logo from "../assects/logo.png";
 import { FaSignOutAlt } from "react-icons/fa";
 import { AuthContext } from "../Contexts/AuthContext";
 
@@ -12,18 +12,17 @@ const Header = () => {
   const navigation = [
     { title: "Home", path: "/home" },
     { title: "Services", path: "/services" },
-    { title: "Add service", path: "/addservice" },
     { title: "Blog", path: "/blog" },
   ];
 
   // use of useContext
   const { user, logOut } = useContext(AuthContext);
-    // LogOut function
-    const handleLogout = () => {
-        logOut()
-          .then(() => {})
-          .catch((error) => console.log(error));
-      };
+  // LogOut function
+  const handleLogout = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
   return (
     <nav className="bg-fuchsia-200 w-full border-b md:border-0 md:static">
       <div className="items-center px-4  mx-auto md:flex md:px-8">
@@ -89,25 +88,49 @@ const Header = () => {
                 </li>
               );
             })}
-            
-            <li>
-                {
-                    user?
-                    <div className="avatar tooltip tooltip-right tooltip-secondary" data-tip="hello">
-                        <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            {
-                                <img src="https://placeimg.com/192/192/people"/>
-                            }
-                        </div>
-                    </div>
-                    :
-                    <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">Login</button>
-                }
-            </li>
 
-            <li>
-                <button onClick={handleLogout} className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500"><FaSignOutAlt></FaSignOutAlt></button>
-            </li>
+            {user?.uid? (
+              <>
+              <li>
+              <Link to="/myreviews">
+                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">
+                My reviews
+                </button>
+              </Link>
+              </li>
+              <li>
+              <Link to="/addservice">
+                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">
+                Add service
+                </button>
+              </Link>
+              </li>
+                <li>
+                  <div
+                    className="avatar tooltip md:tooltip-bottom tooltip-right tooltip-secondary"
+                    data-tip={user?.displayName? user.displayName : 'User'}
+                  >
+                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src={user.photoURL} alt="" />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500"
+                  >
+                    <FaSignOutAlt></FaSignOutAlt>
+                  </button>
+                </li>
+              </>
+            ) : (
+              <Link to="/login">
+                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">
+                  Login
+                </button>
+              </Link>
+            )}
           </ul>
         </div>
       </div>

@@ -15,7 +15,7 @@ const Reviews = ({ serviceDetails }) => {
     const userName = form.userName.value;
     const userimage = user.photoURL;
     const userReview = form.userReview.value;
-    const time = form.time.value;
+    const time = (new Date());
     const userEmail =user?.email;
     const review = {
         serviceId,
@@ -83,9 +83,6 @@ const Reviews = ({ serviceDetails }) => {
             cols="30"
             rows="10"
           ></textarea>
-        </div>
-        <div>
-            <input defaultValue='Today' type="datetime-local" name="time" id="" required/>
         </div>
         <div className="rating rating-lg rating-half">
           <input type="radio" name="rating-10" className="rating-hidden" />

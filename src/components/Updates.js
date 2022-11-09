@@ -11,11 +11,9 @@ const Updates = () => {
     const form = event.target;
     const userName = form.userName.value;
     const userReview = form.userReview.value;
-    const time = form.time.value;
     const review = {
       userName,
       userReview,
-      time,
     };
     fetch(`http://localhost:5000/reviews/${storedrReView._id}`, {
       method: "PUT",
@@ -62,15 +60,6 @@ const Updates = () => {
               cols="30"
               rows="10"
             ></textarea>
-          </div>
-          <div>
-            <input
-              type="datetime-local"
-              name="time"
-              id=""
-              defaultValue=""
-              required
-            />
           </div>
 
           <div className="form-control mt-6">

@@ -8,7 +8,7 @@ import { AuthContext } from "../Contexts/AuthContext";
 const Header = () => {
   const [state, setState] = useState(false);
 
-  // Replace javascript:void(0) path with your path
+ 
   const navigation = [
     { title: "Home", path: "/home" },
     { title: "Services", path: "/services" },
@@ -24,11 +24,11 @@ const Header = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <nav className="bg-fuchsia-200 w-full border-b md:border-0 md:static">
+    <nav className="bg-teal-800 w-full border-b md:border-0 md:static">
       <div className="items-center px-4  mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link to="/">
-            <h1 className="font-extrabold text-4xl font-serif text-red-600 flex items-center">
+            <h1 className="font-extrabold text-4xl font-serif text-purple-600 flex items-center">
               <img style={{ width: "45px" }} src={logo} alt="" />
               <span>Photo Phactory</span>
             </h1>
@@ -80,7 +80,7 @@ const Header = () => {
               return (
                 <li key={idx}>
                   <NavLink
-                    className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500"
+                    className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-purple-600"
                     to={item.path}
                   >
                     {item.title}
@@ -93,14 +93,14 @@ const Header = () => {
               <>
               <li>
               <Link to="/myreviews">
-                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">
+                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-purple-600">
                 My reviews
                 </button>
               </Link>
               </li>
               <li>
               <Link to="/addservice">
-                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">
+                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-600">
                 Add service
                 </button>
               </Link>
@@ -118,7 +118,7 @@ const Header = () => {
                 <li>
                   <button
                     onClick={handleLogout}
-                    className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500"
+                    className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-600"
                   >
                     <FaSignOutAlt></FaSignOutAlt>
                   </button>
@@ -126,7 +126,7 @@ const Header = () => {
               </>
             ) : (
               <Link to="/login">
-                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-500">
+                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-600">
                   Login
                 </button>
               </Link>

@@ -2,3 +2,15 @@
     width: 80px;
     height: 80px;
 }
+.faq-sec{
+    background-color: lightpink;
+    padding: 5px;
+    border-radius: 10px;
+}
+.login-from{
+    background-image: url('https://wallpaperaccess.com/full/4893666.jpg');
+}
+
+.register{
+    background-image: url('https://wallpaperaccess.com/full/1892783.jpg');
+}

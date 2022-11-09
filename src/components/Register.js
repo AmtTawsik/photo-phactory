@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
 import { Helmet } from "react-helmet-async";
+import toast from "react-hot-toast";
 
 // This is Register Page
 const Register = () => {
@@ -19,6 +20,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success('User Created Successfully')
         form.reset();
         handleUpdateUserProfile(name, photo);
       })
@@ -35,23 +37,23 @@ const Register = () => {
       .catch((e) => console.log(e));
   };
   return (
-    <div>
+    <div className="">
       <Helmet>
         <title>Register-Photo Phactory</title>
       </Helmet>
-      <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
+      <div className="register flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
         <div>
           <a href="/">
-            <h3 className="text-4xl font-bold text-purple-600">Register</h3>
+            <h3 className="text-2xl md:text-5xl font-bold text-white">Register</h3>
           </a>
         </div>
-        <div className="w-full px-6 py-4 mt-6 overflow-hidden bg-fuchsia-500 shadow-md sm:max-w-lg sm:rounded-lg">
+        <div className="w-full px-6 py-4 mt-6 overflow-hidden shadow-md sm:max-w-lg sm:rounded-lg">
           <form onSubmit={handleSubmit}>
             {/* Input Fuild for Full Name */}
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-medium text-gray-50 undefined"
               >
                 Full Name
               </label>
@@ -59,7 +61,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="name"
-                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg text-black focus:ring-indigo-200 focus:ring-opacity-50"
                   required
                 />
               </div>
@@ -69,7 +71,7 @@ const Register = () => {
             <div className="mt-4">
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-medium text-gray-50 undefined"
               >
                 Photo URL
               </label>
@@ -77,7 +79,7 @@ const Register = () => {
                 <input
                   type="text"
                   name="photo"
-                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"               
+                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg text-black focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"               
                 />
               </div>
             </div>
@@ -86,7 +88,7 @@ const Register = () => {
             <div className="mt-4">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-medium text-gray-50 undefined"
               >
                 Email
               </label>
@@ -94,7 +96,7 @@ const Register = () => {
                 <input
                   type="email"
                   name="email"
-                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg text-black focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   required
                 />
               </div>
@@ -104,7 +106,7 @@ const Register = () => {
             <div className="mt-4">
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 undefined"
+                className="block text-sm font-medium text-gray-50 undefined"
               >
                 Password
               </label>
@@ -112,15 +114,15 @@ const Register = () => {
                 <input
                   type="password"
                   name="password"
-                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                  className="block w-full mt-1 p-2 border-gray-300 rounded-md shadow-lg text-black focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
                   required
                 />
               </div>
             </div>
 
             {/* Register Button */}
-            <div className="flex items-center mt-4">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+            <div className="flex items-center mt-8">
+              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-500 rounded-md hover:bg-purple-600">
                 Register
               </button>
             </div>
@@ -128,7 +130,7 @@ const Register = () => {
           <div className="mt-4 text-grey-600">
             Already have an account?{" "}
             <Link to="/login">
-              <button className="text-purple-600 hover:underline" href="#">
+              <button className="text-purple-600" href="#">
                 Log in
               </button>
             </Link>

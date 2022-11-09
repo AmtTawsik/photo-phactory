@@ -20,7 +20,7 @@ const FaqsCard = (props) => {
           key={idx}
           onClick={handleOpenAnswer}
       >
-          <h4 className="cursor-pointer pb-5 flex items-center justify-between text-lg text-white font-medium">
+          <h4 className="cursor-pointer pb-5 flex items-center justify-between text-lg text-fuchsia-800 font-medium">
               {faqsList.q}
               {
                   state ? (
@@ -39,7 +39,7 @@ const FaqsCard = (props) => {
               style={state ? {height: answerH } : {height: '0px'}}
           >
               <div>
-                  <p className="text-white">
+                  <p className="text-fuchsia-800">
                       {faqsList.a}
                   </p>
               </div>

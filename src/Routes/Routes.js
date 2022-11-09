@@ -57,6 +57,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/updates',
                 element:<Updates></Updates>,
+                loader:({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
             },
         ]
     }

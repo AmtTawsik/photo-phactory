@@ -16,18 +16,19 @@ const Updates = () => {
             userReview,
             time,
         }
-        fetch('http://localhost:5000/reviews', {
-            method:'POST',
+        fetch(`http://localhost:5000/reviews/${storedrReView._id}`, {
+            method:'PUT',
             headers:{
                 'content-type': 'application/json'
             },
             body: JSON.stringify(review)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(err => console.error(err))
-        toast.success('Review Added Successfully')
-        form.reset();
+        .then(data =>{
+             if(data.modifiedCount > 0){
+                toast.success('Review Updated Successfuly')
+             }
+        })
       }
 
     return (

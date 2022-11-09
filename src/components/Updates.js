@@ -1,11 +1,12 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const Updates = () => {
   const storedrReView = useLoaderData();
 
+  const navigate = useNavigate();
   const handleReviewUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -26,6 +27,7 @@ const Updates = () => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           toast.success("Review Updated Successfuly");
+          navigate('/myreviews')
         }
       });
   };

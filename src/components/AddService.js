@@ -27,7 +27,7 @@ const handleAddServic = (event) => {
     .then((res) => res.json())
     .then((data) => console.log(data))
     .catch((err) => console.error(err));
-  toast.success("Product Added Successfully");
+  toast.success("Service Added Successfully");
   form.reset();
 };
 

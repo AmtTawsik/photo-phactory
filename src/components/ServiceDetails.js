@@ -13,6 +13,7 @@ const ServiceDetails = () => {
       </Helmet>
 
       <div className="card lg:card-side bg-base-100 h-4/6 shadow-2xl grid md:grid-cols-2 my-5">
+        {/* PhotoProvider for ZoomIn */}
         <PhotoProvider>
           <PhotoView src={serviceDetails.image}>
             <img

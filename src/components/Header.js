@@ -8,7 +8,6 @@ import { AuthContext } from "../Contexts/AuthContext";
 const Header = () => {
   const [state, setState] = useState(false);
 
- 
   const navigation = [
     { title: "Home", path: "/home" },
     { title: "Services", path: "/services" },
@@ -34,6 +33,7 @@ const Header = () => {
             </h1>
           </Link>
           <div className="md:hidden">
+            {/* Burger Button */}
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
               onClick={() => setState(!state)}
@@ -89,26 +89,26 @@ const Header = () => {
               );
             })}
 
-            {user?.uid? (
+            {user?.uid ? (
               <>
-              <li>
-              <Link to="/myreviews">
-                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-purple-600">
-                My reviews
-                </button>
-              </Link>
-              </li>
-              <li>
-              <Link to="/addservice">
-                <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-600">
-                Add service
-                </button>
-              </Link>
-              </li>
+                <li>
+                  <Link to="/myreviews">
+                    <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-purple-600">
+                      My reviews
+                    </button>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/addservice">
+                    <button className="px-5 py-2 rounded-lg text-xl font-bold text-gray-800 hover:text-gray-50 hover:bg-fuchsia-600">
+                      Add service
+                    </button>
+                  </Link>
+                </li>
                 <li>
                   <div
                     className="avatar tooltip md:tooltip-bottom tooltip-right tooltip-secondary"
-                    data-tip={user?.displayName? user.displayName : 'User'}
+                    data-tip={user?.displayName ? user.displayName : "User"}
                   >
                     <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                       <img src={user.photoURL} alt="" />

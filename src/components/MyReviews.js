@@ -5,9 +5,10 @@ import { AuthContext } from "../Contexts/AuthContext";
 import MyReview from "./MyReview";
 
 const MyReviews = () => {
-  const { user,logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
 
+  // Delete handeler
   const handleDelete = (id) => {
     const proceed = window.confirm(
       "Are you sure, you want to delete this review?"
@@ -28,23 +29,21 @@ const MyReviews = () => {
     }
   };
 
-
-
+  // Get Data By Email
   useEffect(() => {
     fetch(`http://localhost:5000/myReviews?userEmail=${user?.email}`, {
-      headers:{
-        authorization: `Bearer ${localStorage.getItem('Photo-Phactory-Token')}`
-      }
+      headers: {
+        authorization: `Bearer ${localStorage.getItem("Photo-Phactory-Token")}`,
+      },
     })
       .then((res) => {
-        if(res.status === 401 || res.status === 403){
+        if (res.status === 401 || res.status === 403) {
           logOut();
         }
-        return res.json()
+        return res.json();
       })
       .then((data) => setMyReviews(data));
   }, [user?.email, logOut]);
-
 
   return (
     <div>

@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthContext";
 import Service from "./Service";
 
 const Services = () => {
-  // const services = useLoaderData();
   const { loading, setLoading } = useContext(AuthContext);
   const [services, setServices] = useState([]);
+  // Get all The Services
   useEffect(() => {
     setLoading(true);
     fetch("http://localhost:5000/services")

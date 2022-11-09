@@ -25,11 +25,13 @@ const MyReview = ({ myReview, handleDelete }) => {
             {myReview.userReview}
           </p>
           <div className="flex content-between justify-between pb-2">
+            {/* Update Button */}
             <Link to={`/updates/${_id}`}>
               <button className="btn text-green-400 rounded-full font-bold text-2xl">
                 <FaEdit></FaEdit>
               </button>
             </Link>
+            {/* Delete Button */}
             <button
               onClick={() => handleDelete(_id)}
               className="btn text-red-600 rounded-full font-bold text-2xl"

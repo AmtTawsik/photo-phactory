@@ -2,9 +2,9 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const Blogs = () => {
-  
   return (
     <div>
+      {/* page Title */}
       <Helmet>
         <title>Blogs-Photo Phactory</title>
       </Helmet>

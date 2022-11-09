@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 
+// Add service Event Handeler
 const handleAddServic = (event) => {
   event.preventDefault();
   const form = event.target;
@@ -34,6 +35,7 @@ const handleAddServic = (event) => {
 const AddService = () => {
   return (
     <>
+      {/* Page Title */}
       <Helmet>
         <title>Add Services-Photo Phactory</title>
       </Helmet>
@@ -42,6 +44,7 @@ const AddService = () => {
           <h1 className="text-3xl font-semibold text-center text-indigo-700 underline uppercase decoration-wavy">
             Add More Service
           </h1>
+          {/* Here Is The From */}
           <form onSubmit={handleAddServic} className="mt-6">
             <div className="mb-2">
               <label className="block text-sm font-semibold text-gray-800">

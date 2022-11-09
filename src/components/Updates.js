@@ -7,6 +7,8 @@ const Updates = () => {
   const storedrReView = useLoaderData();
 
   const navigate = useNavigate();
+
+  // Update Handeler
   const handleReviewUpdate = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -16,6 +18,7 @@ const Updates = () => {
       userName,
       userReview,
     };
+    // Use PUT method
     fetch(`http://localhost:5000/reviews/${storedrReView._id}`, {
       method: "PUT",
       headers: {
@@ -27,7 +30,7 @@ const Updates = () => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           toast.success("Review Updated Successfuly");
-          navigate('/myreviews')
+          navigate("/myreviews");
         }
       });
   };
@@ -65,6 +68,7 @@ const Updates = () => {
           </div>
 
           <div className="form-control mt-6">
+            {/* Add Review Button */}
             <button type="submit" className="btn btn-primary">
               Add Review
             </button>

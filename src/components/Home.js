@@ -17,9 +17,11 @@ const Home = () => {
   }, []);
   return (
     <>
+      {/* Page Title */}
       <Helmet>
         <title>Home-Photo Phactory</title>
       </Helmet>
+      {/* Bannar Section */}
       <section>
         <div
           className="hero min-h-screen"
@@ -44,6 +46,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Services Section */}
       <section>
         <h1 className="font-extrabold font-serif text-5xl text-teal-200 mb-5 mt-2 text-center">
           Services
@@ -60,6 +63,7 @@ const Home = () => {
         </Link>
       </section>
 
+      {/* About us Section */}
       <section>
         <div className="hero bg-base-200">
           <div className="hero-content flex-col lg:flex-row">
@@ -86,6 +90,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Some Demo Work Section */}
       <section>
         <h1 className="text-5xl font-bold text-emerald-300 mt-10 mb-5 text-center">
           Some Demo Work!

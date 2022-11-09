@@ -1,47 +1,61 @@
-.f-logo{
+.f-logo {
     width: 80px;
     height: 80px;
 }
-.faq-sec{
+
+.faq-sec {
     background-color: lightpink;
     padding: 5px;
     border-radius: 10px;
 }
-.login-from{
+
+.login-from {
     background-image: url('https://wallpaperaccess.com/full/4893666.jpg');
 }
 
-.register{
+.register {
     background-image: url('https://wallpaperaccess.com/full/1892783.jpg');
 }
 
 
+/* Error Page Style start */
 
-
-.page_404{ padding:40px 0; background:#fff; font-family: 'Arvo', serif;
+.page_404 {
+    padding: 40px 0;
+    background: #fff;
+    font-family: 'Arvo', serif;
 }
 
-.page_404  img{ width:100%;}
+.page_404 img {
+    width: 100%;
+}
 
-.four_zero_four_bg{
+.four_zero_four_bg {
     background-image: url(/src/assects/animation.gif);
     height: 550px;
     background-position: center;
     background-repeat: no-repeat;
- }
- 
- 
- .four_zero_four_bg h1{
- font-size:80px;
- }
- 
-  .four_zero_four_bg h3{
-       font-size:80px;
-       }
-       
-       .link_404{      
-  color: #fff!important;
+}
+
+
+.four_zero_four_bg h1 {
+    font-size: 80px;
+}
+
+.four_zero_four_bg h3 {
+    font-size: 80px;
+}
+
+.link_404 {
+    color: #fff !important;
     padding: 10px 20px;
     margin: 0 0 130px 0;
-    display: inline-block;}
-  .contant_box_404{ margin-top:-140px;}
+    display: inline-block;
+}
+
+.contant_box_404 {
+    margin-top: -140px;
+}
+
+
+/* Error Page Style End */

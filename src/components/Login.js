@@ -7,6 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet-async";
+import { data } from "autoprefixer";
 
 const Login = () => {
   const { ProviderLogin, signIn } = useContext(AuthContext);
@@ -28,9 +29,30 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         form.reset();
-        navigate(from, { replace: true });
         setError(" ");
         toast.success("Login successfull");
+
+
+        // jwt token
+        const currentUser = {
+          email: user.email,
+        }
+        fetch('http://localhost:5000/jwt',{
+          method:'POST',
+          headers:{
+            'content-type' : 'application/json'
+          },
+          body:JSON.stringify(currentUser)
+        })
+        .then(res =>res.json())
+        .then(data => {
+          console.log(data);
+          localStorage.setItem('Photo-Phactory-token', data.token);
+        })
+
+
+
+        navigate(from, { replace: true });
       })
       .catch((error) => setError(error.message));
   };

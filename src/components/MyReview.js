@@ -9,7 +9,7 @@ const MyReview = ({ myReview, handleDelete }) => {
     <div className=" bg-base-200 py-0 my-5 w-10/12 md:w-5/12 mx-auto rounded-xl">
       <div className="hero-content flex-col lg:flex-row pl-0 py-0">
         <div className="w-48 mask mask-squircle">
-          <img alt="" className="r-image" src={myReview.userimage} />
+          <img alt="" className="w-full" src={myReview.userimage} />
         </div>
         <div className="mx-5">
           <h1 className="text-xl font-bold p-0">{myReview.userName}</h1>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import bg from "../assects/bg-home.jpg";
 import right from "../assects/right.jpg";
+import DemoWork from "./DemoWork";
 import FaQ from "./FaQ";
 import Service from "./Service";
 
@@ -77,6 +78,11 @@ const Home = () => {
       </section>
 
       <section>
+        <h1 className="text-5xl font-bold text-emerald-300 mt-10 mb-5 text-center">Some Demo Work!</h1>
+        <DemoWork></DemoWork>
+      </section>
+
+      <section className="my-5">
         <FaQ></FaQ>
       </section>
     </>

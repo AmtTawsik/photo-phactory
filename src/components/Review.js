@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa';
 const Review = ({reView}) => {
     return (
         <div className=" bg-base-200 py-0 my-5 rounded-xl">
-        <div className="hero-content flex-col lg:flex-row py-0">
+        <div className="hero-content justify-start flex-col lg:flex-row py-0">
           <div className="w-24 mask mask-squircle">
             <img alt='' src={reView.userimage} />
           </div>

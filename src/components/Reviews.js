@@ -41,6 +41,7 @@ const Reviews = ({ serviceDetails }) => {
   }
 
   const [reViews,setReViews] = useState([]);
+  
   useEffect(()=>{
     fetch(`http://localhost:5000/reviews?serviceId=${serviceId}`)
     .then(res =>res.json())
@@ -84,7 +85,7 @@ const Reviews = ({ serviceDetails }) => {
           ></textarea>
         </div>
         <div>
-            <input type="datetime-local" name="time" id="" defaultValue='' required/>
+            <input defaultValue='Today' type="datetime-local" name="time" id="" required/>
         </div>
         <div className="rating rating-lg rating-half">
           <input type="radio" name="rating-10" className="rating-hidden" />

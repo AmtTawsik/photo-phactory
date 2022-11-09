@@ -1,8 +1,8 @@
 # PHOTO-PHACTORY #
 
-### Live Site Link : https://skill-online.web.app/ ###
+### Live Site Link : https://photo-phactory-amt.web.app/ ###
 
-### Live Server Link :https://skill-online-server.vercel.app/category/ ###
+### Live Server Link : https://photo-phactory-server.vercel.app/services ###
 
 ### Features and Functionality : ###
 

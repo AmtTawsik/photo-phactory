@@ -26,7 +26,7 @@ const Reviews = ({ serviceDetails }) => {
       userimage,
       time,
     };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://photo-phactory-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -44,7 +44,7 @@ const Reviews = ({ serviceDetails }) => {
 
   // Get Data by service Id
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?serviceId=${serviceId}`)
+    fetch(`https://photo-phactory-server.vercel.app/reviews?serviceId=${serviceId}`)
       .then((res) => res.json())
       .then((data) => setReViews(data));
   }, [reViews, serviceId]);

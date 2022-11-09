@@ -11,7 +11,7 @@ import Service from "./Service";
 const Home = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/homeServices")
+    fetch("https://photo-phactory-server.vercel.app/homeServices")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

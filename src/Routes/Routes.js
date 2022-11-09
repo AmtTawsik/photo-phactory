@@ -45,12 +45,12 @@ export const routes = createBrowserRouter([
             {
                 path:'/services',
                 element:<Services></Services>,
-                loader:()=>fetch('http://localhost:5000/services'),
+                loader:()=>fetch('https://photo-phactory-server.vercel.app/services'),
             },
             {
                 path:'/services/:id',
                 element:<ServiceDetails></ServiceDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                loader:({params})=>fetch(`https://photo-phactory-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/blog',
@@ -59,7 +59,7 @@ export const routes = createBrowserRouter([
             {
                 path:'/updates/:id',
                 element:<Updates></Updates>,
-                loader:({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                loader:({params}) => fetch(`https://photo-phactory-server.vercel.app/reviews/${params.id}`)
             },
         ]
     }

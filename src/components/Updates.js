@@ -19,7 +19,7 @@ const Updates = () => {
       userReview,
     };
     // Use PUT method
-    fetch(`http://localhost:5000/reviews/${storedrReView._id}`, {
+    fetch(`https://photo-phactory-server.vercel.app/reviews/${storedrReView._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

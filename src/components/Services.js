@@ -9,7 +9,7 @@ const Services = () => {
   // Get all The Services
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:5000/services")
+    fetch("https://photo-phactory-server.vercel.app/services")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);

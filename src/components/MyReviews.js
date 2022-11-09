@@ -14,7 +14,7 @@ const MyReviews = () => {
       "Are you sure, you want to delete this review?"
     );
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://photo-phactory-server.vercel.app/reviews/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -31,7 +31,7 @@ const MyReviews = () => {
 
   // Get Data By Email
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews?userEmail=${user?.email}`, {
+    fetch(`https://photo-phactory-server.vercel.app/myReviews?userEmail=${user?.email}`, {
       headers: {
         authorization: `Bearer ${localStorage.getItem("Photo-Phactory-Token")}`,
       },

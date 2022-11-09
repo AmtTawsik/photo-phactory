@@ -12,7 +12,7 @@ const Header = () => {
   const navigation = [
     { title: "Home", path: "/home" },
     { title: "Services", path: "/services" },
-    { title: "Blog", path: "/blog" },
+    { title: "Blogs", path: "/blog" },
   ];
 
   // use of useContext

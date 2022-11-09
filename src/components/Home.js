@@ -41,12 +41,13 @@ const Home = () => {
       </section>
 
       <section>
+        <h1 className="font-extrabold font-serif text-5xl text-teal-200 mb-5 mt-2 text-center">Services</h1>
         <div className="grid md:grid-cols-3 gap-6 my-7 w-11/12 mx-auto">
           {services.map((service) => (
             <Service key={service._id} service={service}></Service>
           ))}
         </div>
-        <Link to='/services' className="flex justify-center mb-5"><button className="btn btn-active btn-accent">See All</button></Link>
+        <Link to='/services' className="flex justify-center mb-5"><button className="btn btn-active btn-accent px-10 hover:bg-lime-400">See All</button></Link>
       </section>
 
       <section>
@@ -57,7 +58,7 @@ const Home = () => {
               className="max-w-sm rounded-lg shadow-2xl"
               alt=""
             />
-            <div>
+            <div className="p-10">
               <h1 className="text-5xl font-bold">About Us</h1>
               <p className="py-6">
                 I approach photography with a romantic, fine art sensibility. My

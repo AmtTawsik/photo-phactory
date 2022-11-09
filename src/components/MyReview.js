@@ -15,9 +15,9 @@ const MyReview = ({ myReview }) => {
             <span className="font-extrabold">Rating:</span> 4.8{" "}
             <FaStar></FaStar>
           </p>
-          <p>Service Name:{myReview.serviceName}</p>
+          <p className="font-bold text-xl text-green-300">Service Name: {myReview.serviceName}</p>
           <p className="">
-            <span className="font-extrabold text-orange-700">Review:</span>{" "}
+            <span className="font-extrabold text-orange-500">Review:</span>{" "}
             {myReview.userReview}
           </p>
           <div className="flex content-between justify-between pb-2">

@@ -5,10 +5,6 @@ import { AuthContext } from "../Contexts/AuthContext";
 import Review from "./Review";
 
 
-
-
-// db.collection_name.find ().sort ( { name_of_date_field : -1 (Display the date in descending order) } )
-
 const Reviews = ({ serviceDetails }) => {
   const {user} =useContext(AuthContext)
   const serviceId = serviceDetails._id;

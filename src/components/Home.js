@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import "../App.css";
 import bg from "../assects/bg-home.jpg";
@@ -14,9 +15,11 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
-  console.log(services);
   return (
     <>
+      <Helmet>
+        <title>Home-Photo Phactory</title>
+      </Helmet>
       <section>
         <div
           className="hero min-h-screen"
@@ -42,13 +45,19 @@ const Home = () => {
       </section>
 
       <section>
-        <h1 className="font-extrabold font-serif text-5xl text-teal-200 mb-5 mt-2 text-center">Services</h1>
+        <h1 className="font-extrabold font-serif text-5xl text-teal-200 mb-5 mt-2 text-center">
+          Services
+        </h1>
         <div className="grid md:grid-cols-3 gap-6 my-7 w-11/12 mx-auto">
           {services.map((service) => (
             <Service key={service._id} service={service}></Service>
           ))}
         </div>
-        <Link to='/services' className="flex justify-center mb-5"><button className="btn btn-active btn-accent px-10 hover:bg-lime-400">See All</button></Link>
+        <Link to="/services" className="flex justify-center mb-5">
+          <button className="btn btn-active btn-accent px-10 hover:bg-lime-400">
+            See All
+          </button>
+        </Link>
       </section>
 
       <section>
@@ -78,7 +87,9 @@ const Home = () => {
       </section>
 
       <section>
-        <h1 className="text-5xl font-bold text-emerald-300 mt-10 mb-5 text-center">Some Demo Work!</h1>
+        <h1 className="text-5xl font-bold text-emerald-300 mt-10 mb-5 text-center">
+          Some Demo Work!
+        </h1>
         <DemoWork></DemoWork>
       </section>
 

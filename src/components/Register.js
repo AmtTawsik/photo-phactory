@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthContext";
+import { Helmet } from "react-helmet-async";
 
 // This is Register Page
 const Register = () => {
@@ -35,6 +36,9 @@ const Register = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Register-Photo Phactory</title>
+      </Helmet>
       <div className="flex flex-col items-center min-h-screen pt-6 sm:justify-center sm:pt-0">
         <div>
           <a href="/">

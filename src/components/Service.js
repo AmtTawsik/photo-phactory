@@ -9,7 +9,7 @@ const Service = ({service}) => {
       
       <PhotoProvider>
         <PhotoView src={image}>
-            <img className='w-11/12 mx-auto' style={{ height: "200px" }} src={image} alt="" />
+            <img className='w-11/12 mx-auto mt-2' style={{ height: "200px" }} src={image} alt="" />
         </PhotoView>
       </PhotoProvider>
       <div className="card-body">

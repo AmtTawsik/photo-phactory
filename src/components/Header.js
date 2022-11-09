@@ -24,11 +24,11 @@ const Header = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <nav className="bg-teal-800 w-full border-b md:border-0 md:static">
+    <nav className="bg-teal-600 w-full border-b md:border-0 md:static">
       <div className="items-center px-4  mx-auto md:flex md:px-8">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <Link to="/">
-            <h1 className="font-extrabold text-4xl font-serif text-purple-600 flex items-center">
+            <h1 className="font-extrabold text-4xl font-serif text-purple-800 flex items-center">
               <img style={{ width: "45px" }} src={logo} alt="" />
               <span>Photo Phactory</span>
             </h1>

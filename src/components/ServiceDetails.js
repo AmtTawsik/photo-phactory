@@ -27,7 +27,7 @@ const ServiceDetails = () => {
           <p>{serviceDetails.description}</p>
           <p className="text-4xl">Price: ${serviceDetails.price}</p>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">Listen</button>
+            <button className="btn btn-primary">Checkout</button>
           </div>
         </div>
       </div>

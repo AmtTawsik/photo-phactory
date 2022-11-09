@@ -51,24 +51,24 @@ const FaqsCard = (props) => {
 const FaQ = () => {
     const faqsList = [
       {
-          q: "What is HTML?",
-          a: "Hypertext Markup Language, a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages."
+          q: "What is Photo Phactory?",
+          a: "Every romantic notion I’ve ever conjured up for a modern yet timeless sun-drenched wedding album is perfectly encapsulated in every image Jen Huang creates — from delicate details and décor to tantalizing food shots and couture-clad, gorgeous brides, Jen’s images have it all, and then some"
       },
       {
-          q: "Do is CSS?",
-          a: "Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML)"
+          q: "What dose Photo Phactory do?",
+          a: "I approach photography with a romantic, fine art sensibility. My imagery is understated yet evocative, resulting from clear and polished creative direction that elicits light-filled, painterly portraits. "
       },
       {
-          q: "What is js?",
-          a: "JavaScript (often shortened to JS) is a lightweight, interpreted, object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well."
+          q: "What is Architectural Photography?",
+          a: "Architectural photography is the sub genre of the photography discipline where the primary emphasis is made to capturing photographs of buildings and similar architectural structures that are both aesthetically pleasing and accurate in terms of representations of their subjects."
       },
       {
-          q: "What is Bootstrap?",
-          a: "Bootstrap is a free, open source front-end development framework for the creation of websites and web apps. Designed to enable responsive development of mobile-first websites, Bootstrap provides a collection of syntax for template designs."
+          q: "What is Sports Photography?",
+          a: "Sports photography is a type of photography that covers every sport and sporting event, capturing the action of a game and behind the scenes of the players."
       },
       {
-          q: "What is React?",
-          a: "React is a declarative, efficient, and flexible JavaScript library for building user interfaces. It lets you compose complex UIs from small and isolated pieces of code called “components”. React has a few different kinds of components, but we'll start with React.Component subclasses: class ShoppingList extends React."
+          q: "What is Birthday Photography?",
+          a: "Birthday photography is a very complex type of shooting, requiring a lot of patience and good communication skills"
       }
   ]
 

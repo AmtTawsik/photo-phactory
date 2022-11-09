@@ -1,8 +1,10 @@
 import React from "react";
-import '../App.css'
+import "../App.css";
 import { FaEdit, FaStar, FaTrashAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const MyReview = ({ myReview }) => {
+const MyReview = ({ myReview, handleDelete }) => {
+  const { _id } = myReview;
   return (
     <div className=" bg-base-200 py-0 my-5 w-10/12 md:w-5/12 mx-auto rounded-xl">
       <div className="hero-content flex-col lg:flex-row pl-0 py-0">
@@ -15,7 +17,9 @@ const MyReview = ({ myReview }) => {
             <span className="font-extrabold">Rating:</span> 4.8{" "}
             <FaStar></FaStar>
           </p>
-          <p className="font-bold text-xl text-green-300">Service Name: {myReview.serviceName}</p>
+          <p className="font-bold text-xl text-green-300">
+            Service Name: {myReview.serviceName}
+          </p>
           <p className="">
             <span className="font-extrabold text-orange-500">Review:</span>{" "}
             {myReview.userReview}
@@ -24,9 +28,14 @@ const MyReview = ({ myReview }) => {
             <button className="btn text-green-400 rounded-full font-bold text-2xl">
               <FaEdit></FaEdit>
             </button>
-            <button className="btn text-red-600 rounded-full font-bold text-2xl">
-              <FaTrashAlt></FaTrashAlt>
-            </button>
+            <Link>
+              <button
+                onClick={() => handleDelete(_id)}
+                className="btn text-red-600 rounded-full font-bold text-2xl"
+              >
+                <FaTrashAlt></FaTrashAlt>
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import MyReviews from "../components/MyReviews";
 import Register from "../components/Register";
 import ServiceDetails from "../components/ServiceDetails";
 import Services from "../components/Services";
+import Updates from "../components/Updates";
 import Main from "../layout/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -52,6 +53,10 @@ export const routes = createBrowserRouter([
             {
                 path:'/blog',
                 element:<Blogs></Blogs>,
+            },
+            {
+                path:'/updates',
+                element:<Updates></Updates>,
             },
         ]
     }

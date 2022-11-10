@@ -135,6 +135,7 @@ const Login = () => {
                     name="email"
                     placeholder="email"
                     className="input input-bordered"
+                    required
                   />
                 </div>
 
@@ -147,6 +148,7 @@ const Login = () => {
                     name="password"
                     placeholder="password"
                     className="input input-bordered"
+                    required
                   />
                 </div>
 

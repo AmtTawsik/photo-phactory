@@ -31,11 +31,16 @@ const MyReviews = () => {
 
   // Get Data By Email
   useEffect(() => {
-    fetch(`https://photo-phactory-server.vercel.app/myReviews?userEmail=${user?.email}`, {
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("Photo-Phactory-Token")}`,
-      },
-    })
+    fetch(
+      `https://photo-phactory-server.vercel.app/myReviews?userEmail=${user?.email}`,
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem(
+            "Photo-Phactory-Token"
+          )}`,
+        },
+      }
+    )
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           logOut();
@@ -50,7 +55,8 @@ const MyReviews = () => {
       <Helmet>
         <title>My Reviews-Photo Phactory</title>
       </Helmet>
-      {myReviews.length <= 0 ? (
+
+      {myReviews.length === 0 ? (
         <p className="text-center py-36 md:py-72 font-bold text-2xl md:text-5xl">
           No Reviews Were Added!
         </p>

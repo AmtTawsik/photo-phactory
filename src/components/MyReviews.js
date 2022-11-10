@@ -1,13 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthContext";
 import MyReview from "./MyReview";
 
 const MyReviews = () => {
   const { user, logOut } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
-
+  const navigate = useNavigate
   // Delete handeler
   const handleDelete = (id) => {
     const proceed = window.confirm(
@@ -44,6 +45,7 @@ const MyReviews = () => {
       .then((res) => {
         if (res.status === 401 || res.status === 403) {
           logOut();
+          navigate('/login')
         }
         return res.json();
       })

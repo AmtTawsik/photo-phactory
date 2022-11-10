@@ -68,6 +68,7 @@ const Reviews = ({ serviceDetails }) => {
               <span className="label-text">Your Name</span>
             </label>
             <input
+              defaultValue={user?.displayName? user.displayName : ''}
               name="userName"
               type="text"
               placeholder="Name"
